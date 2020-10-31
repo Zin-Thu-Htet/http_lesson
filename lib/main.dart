@@ -36,7 +36,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Future<List<Meals>> getMeals() async {
     var data = await http.get(
-        "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast");
+        "https://www.themealdb.com/api/json/v1/1/filter.php?i=");
 
     var jsonData = json.decode(data.body);
 
@@ -69,7 +69,9 @@ class _HomePageState extends State<HomePage> {
                     itemCount: snapshot.data.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
+                        
                         child: Container(
+                        
                           padding: EdgeInsets.all(2),
                           margin: EdgeInsets.all(1),
                           child: Row(
@@ -77,7 +79,8 @@ class _HomePageState extends State<HomePage> {
                               Image.network(snapshot.data[index].urlToImage,
                               width: 70,
                               height: 100),
-                              Text(snapshot.data[index].strMeal)
+                              Text(snapshot.data[index].strMeal,
+                              )
                             ],
                           ),
                         ),
