@@ -78,10 +78,11 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Image.network(snapshot.data[index].urlToImage,
                               width: 70,
-                              height: 100),
-                              Text(snapshot.data[index].strMeal,
+                              height: 100), 
+                              Flexible(
+                                child: Text(snapshot.data[index].strMeal
                               )
-                            ],
+                              )],
                           ),
                         ),
                       );
